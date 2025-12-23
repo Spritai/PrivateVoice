@@ -15,7 +15,6 @@ clients = {}  # {socket: pseudo}
 udp_clients = set()
 
 def broadcast_user_list():
-    """Envoie la liste des pseudos à tous les clients"""
     user_names = ",".join(clients.values())
     list_msg = f"LIST:{user_names}".encode('utf-8')
     for sock in list(clients.keys()):
